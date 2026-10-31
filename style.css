@@ -317,6 +317,57 @@ h1 {
   font-size: 0.72rem;
 }
 
+.credential-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.credential-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.credential-card h3 {
+  min-height: 3em;
+  font-size: 1.1rem;
+}
+
+.credential-meta {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.credential-meta span {
+  margin: 0 4px;
+  color: var(--accent);
+}
+
+.credential-link {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 20px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.credential-link:hover {
+  color: #6e851b;
+}
+
+.credential-link:focus-visible {
+  outline: 2px solid #9a7c00;
+  outline-offset: 4px;
+}
+
 .card {
   padding: 28px;
   background: var(--surface);
@@ -604,6 +655,11 @@ footer {
     gap: 14px;
   }
 
+  .credential-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
   #experience .experience-item {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
@@ -628,6 +684,12 @@ footer {
     grid-column: auto;
   }
 
+}
+
+@media (max-width: 520px) {
+  .credential-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 @media (min-width: 1101px) {
